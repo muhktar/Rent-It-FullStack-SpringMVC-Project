@@ -1,0 +1,135 @@
+body{
+    margin: 0;
+    padding: 0;
+   /* background: url(../resources/images/MoneyCart.jpg);*/
+    background-size: cover;
+    background-position:center;
+    font-family: sans-serif;
+}
+
+.logo-small{
+    position: absolute;
+    bottom: 0.5%;
+    left: 75%;
+    width: 75px;
+    height: 75px;
+   
+}
+
+.loginbox{
+    width:520px ;
+    height: 550px;
+    background:#d2cbdd;
+    color: #fff;
+    top: 53%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 20px;
+    box-shadow:0 0 5px 3px rgb(180, 176, 176);
+
+
+}
+
+.iconify{
+    width: 100px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    box-shadow:0 0 5px 3px rgb(196, 193, 193);
+
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.loginbox input[type= "text"], input[type= "password"], input[type= "date"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 25px ;
+    color: #000;
+    font-size: 16px;
+
+}
+
+.loginbox input[type= "submit"]{
+    border: none;
+    outline: none;
+    height: 40px ;
+    background: #5ad3df;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+
+}
+
+.loginbox input[type= "submit"]:hover{
+    cursor: pointer;
+    background: #5ad3df;
+    color: #000;
+}
+
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color : darkgrey; 
+}
+
+.loginbox a:hover{  
+    color: #000;
+}
+
+.overlay{
+    width: 50%;
+    height: 87%;
+    opacity: 30%;
+    position: absolute;
+    left: 50%;
+    box-shadow: 0 0 8px 8px #d3ccdc;
+    
+}
+
+.gif{
+    position: absolute;
+    bottom: 30%;
+    width: 30%;
+    left: 65%;  
+}
+
+.input-group span{
+    position: absolute;
+    right:10%;
+    font-size: 12px;
+    color: red;
+}
+#submit-error{
+   position: absolute;
+   right: 10%;
+   bottom: -12%;
+   font-size: 12px;
+   color: red;
+}

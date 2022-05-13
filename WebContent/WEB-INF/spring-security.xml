@@ -1,0 +1,43 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+ 
+    <http auto-config="true">
+        <intercept-url pattern="/rentit/admin**" access="hasRole('ROLE_ADMIN')" />
+        <!-- custom form stuff starts here -->
+       
+        <!-- yt -->
+         <intercept-url pattern="/rentit/j_spring_security_check" access= "IS_AUTHENTICATED_ANONYMOUSLY"/>
+         
+        <form-login
+       login-page="/rentit/login" default-target-url ="/rentit/admin"
+       authentication-failure-url="/rentit/error"
+       username-parameter="username"  
+       password-parameter="password" login-processing-url ="/rentit/j_spring_security_check" />
+        <!-- custom form stuff ends here -->
+        
+        <csrf disabled="true" />
+         <!-- more custom form stuff starts here -->
+         <logout logout-success-url="/logout" />
+         <!-- more custom form stuff ends here -->
+        
+    </http>
+ 
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="Boss Baby" password="{noop}boss" authorities="ROLE_ADMIN" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+ 
+ 	<beans:bean id ="passwordEncoder" 
+      class = "org.springframework.security.crypto.password.NoOpPasswordEncoder" 
+      factory-method = "getInstance">
+   </beans:bean>
+ 
+</beans:beans>
